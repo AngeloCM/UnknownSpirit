@@ -63,30 +63,33 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\ICommand.cs" />
+    <Compile Include="Assets\Scripts\Command\ICommand.cs" />
+    <Compile Include="Assets\Scripts\Command\PlayerCommand.cs" />
+    <Compile Include="Assets\Scripts\Controller\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Observer\Interfaces\IObserver.cs" />
+    <Compile Include="Assets\Scripts\Observer\Interfaces\ISubject.cs" />
+    <Compile Include="Assets\Scripts\Observer\Observer.cs" />
+    <Compile Include="Assets\Scripts\Observer\Subject.cs" />
+    <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\Shot\BulletController.cs" />
+    <Compile Include="Assets\Scripts\Shot\GunController.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Angelo/Desktop/ProjectGP2/UnknownSpirit/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.VSCode.Editor">
+      <HintPath>C:/Users/Angelo/Desktop/ProjectGP2/UnknownSpirit/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Angelo/Desktop/ProjectGP2/UnknownSpirit/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>C:/Users/Angelo/Desktop/ProjectGP2/UnknownSpirit/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>C:/Users/Angelo/Desktop/ProjectGP2/UnknownSpirit/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>C:/Users/Angelo/Desktop/ProjectGP2/UnknownSpirit/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/Angelo/Desktop/ProjectGP2/UnknownSpirit/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/Angelo/Desktop/ProjectGP2/UnknownSpirit/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/Angelo/Desktop/ProjectGP2/UnknownSpirit/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/Angelo/Desktop/ProjectGP2/UnknownSpirit/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>C:/Users/Angelo/Desktop/ProjectGP2/UnknownSpirit/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
@@ -96,6 +99,12 @@
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
       <HintPath>C:/Users/Angelo/Desktop/ProjectGP2/UnknownSpirit/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>C:/Users/Angelo/Desktop/ProjectGP2/UnknownSpirit/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.DataPrivacy">
+      <HintPath>C:/Users/Angelo/Desktop/ProjectGP2/UnknownSpirit/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>C:/Users/Angelo/Desktop/ProjectGP2/UnknownSpirit/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
