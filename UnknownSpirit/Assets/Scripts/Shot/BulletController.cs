@@ -16,4 +16,12 @@ public class BulletController : MonoBehaviour
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Arena"))
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }
