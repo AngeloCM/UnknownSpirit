@@ -8,7 +8,7 @@ public class BulletController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -19,7 +19,7 @@ public class BulletController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Arena"))
+        if (other.gameObject.CompareTag("Arena") || other.gameObject.CompareTag("Enemy"))
         {
             Destroy(this.gameObject);
         }

@@ -63,6 +63,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AI\Enemy\Enemy.cs" />
+    <Compile Include="Assets\Scripts\AI\FSM\AbstractFSMState.cs" />
+    <Compile Include="Assets\Scripts\AI\FSM\FiniteStateMachine.cs" />
+    <Compile Include="Assets\Scripts\AI\States\AttackState.cs" />
+    <Compile Include="Assets\Scripts\AI\States\IdleState.cs" />
+    <Compile Include="Assets\Scripts\AI\States\WalkState.cs" />
     <Compile Include="Assets\Scripts\Command\ICommand.cs" />
     <Compile Include="Assets\Scripts\Command\PlayerCommand.cs" />
     <Compile Include="Assets\Scripts\Controller\PlayerController.cs" />
