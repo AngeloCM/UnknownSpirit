@@ -8,6 +8,9 @@ TagManager:
   - Arena
   - Bullet
   - Enemy
+  - FirePoint
+  - Pistol
+  - MachineGun
   layers:
   - Default
   - TransparentFX

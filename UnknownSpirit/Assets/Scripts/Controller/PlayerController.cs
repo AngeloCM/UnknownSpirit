@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.Shot.TypesOfGuns;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,7 +25,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     public float speed = 6.0f;
 
-    public GunController gunController;
+    public GunController _gunController;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,7 @@ public class PlayerController : MonoBehaviour
         state = PlayerState.IDLE;
         myRigibody = GetComponent<Rigidbody>();
         mainCamera = FindObjectOfType<Camera>();
+        
     }
 
     // Update is called once per frame
@@ -39,11 +41,12 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Shoot(true);
+            _gunController.isFiring = true;
+            state = PlayerState.SHOOT;
         }
         if (Input.GetMouseButtonUp(0))
         {
-            Shoot(false);
+            _gunController.isFiring = false;
         }
 
         Walk();
@@ -53,15 +56,6 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         myRigibody.velocity = moveVelocity;
-    }
-
-    void Shoot(bool fire)
-    {
-        if (fire)
-        {
-            state = PlayerState.SHOOT;
-        }
-        gunController.isFiring = fire;
     }
 
     void Walk()
@@ -83,6 +77,14 @@ public class PlayerController : MonoBehaviour
             Debug.DrawLine(cameraRay.origin, pointToLook, Color.red);
 
             transform.LookAt(new Vector3(pointToLook.x, transform.position.y, pointToLook.z));
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("MachineGun"))
+        {
+            _gunController.setMachineGun();
         }
     }
 }

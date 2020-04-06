@@ -1,5 +1,4 @@
-﻿
-using Assets.Scripts.AI.EnemyCode;
+﻿using Assets.Scripts.AI.EnemyCode;
 using Assets.Scripts.AI.States;
 using System;
 using System.Collections.Generic;
