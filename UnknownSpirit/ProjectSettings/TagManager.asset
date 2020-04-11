@@ -11,6 +11,8 @@ TagManager:
   - FirePoint
   - Pistol
   - MachineGun
+  - Spawner
+  - ShotGun
   layers:
   - Default
   - TransparentFX

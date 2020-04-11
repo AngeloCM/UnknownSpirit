@@ -22,18 +22,17 @@ public class PlayerController : MonoBehaviour
 
     Camera mainCamera;
 
+    public GunController _gunController;
+
     [SerializeField]
     public float speed = 6.0f;
-
-    public GunController _gunController;
 
     // Start is called before the first frame update
     void Start()
     {
         state = PlayerState.IDLE;
         myRigibody = GetComponent<Rigidbody>();
-        mainCamera = FindObjectOfType<Camera>();
-        
+        mainCamera = FindObjectOfType<Camera>();  
     }
 
     // Update is called once per frame
@@ -84,7 +83,21 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("MachineGun"))
         {
+            Debug.Log("MACHINE GUN");
             _gunController.setMachineGun();
+            Destroy(other.gameObject);
+        }
+        else if (other.gameObject.CompareTag("ShotGun"))
+        {
+            Debug.Log("SHOTGUN");
+            _gunController.setShotGun();
+            Destroy(other.gameObject);
+        }
+        else if (other.gameObject.CompareTag("Pistol"))
+        {
+            Debug.Log("PISTOL");
+            _gunController.setPistol();
+            Destroy(other.gameObject);
         }
     }
 }

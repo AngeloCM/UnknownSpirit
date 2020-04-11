@@ -27,4 +27,14 @@ public class GunController : MonoBehaviour
     {
         _currentGun = new MachineGun(this);
     }
+
+    public void setShotGun()
+    {
+        _currentGun = new ShotGun(this);
+    }
+
+    public void setPistol()
+    {
+        _currentGun = new Pistol(this);
+    }
 }
