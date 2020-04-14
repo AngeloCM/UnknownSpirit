@@ -12,7 +12,7 @@ public class Pistol : Gun
         bulletSpeed = 15f;
         timeBetweenShots = 0.5f;
         amountOfBullets = 15;
-    }    
+    }
 
     public override void Update()
     {
@@ -38,6 +38,8 @@ public class Pistol : Gun
             BulletController newBullet = Instantiate(gunController.bullet, gunController.firePoint.position, gunController.firePoint.rotation) as BulletController;
             newBullet.speed = bulletSpeed;
             amountOfBullets--;
+
+            newBullet.transform.parent = gunController.BulletsBeingShot.transform;
         }
         else
         {

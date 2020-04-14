@@ -6,13 +6,20 @@ using UnityEngine;
 public class GunController : MonoBehaviour
 {
     Gun _currentGun;
+    public GameObject BulletsBeingShot;
     public BulletController bullet;
     public Transform firePoint;
     public bool isFiring;
 
-    private void Start()
+    void Start()
     {
-        _currentGun = new Pistol(this);
+        BulletsBeingShot = new GameObject();
+        BulletsBeingShot.name = "BulletsBeingShot";
+
+        if (_currentGun == null)
+        {
+            _currentGun = new Pistol(this);
+        }       
     }
 
     void Update()

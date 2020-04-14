@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class MachineGun : Gun
 {
+
     public MachineGun(GunController gController)
     {
         gunController = gController;
         bulletSpeed = 15f;
         timeBetweenShots = 0.1f;
-        amountOfBullets = 50;
+        amountOfBullets = 30;
+
     }
 
     public override void Update()
@@ -32,11 +34,16 @@ public class MachineGun : Gun
 
     public override void Shoot()
     {
+        
+
         if (amountOfBullets > 0)
         {
+
             BulletController newBullet = Instantiate(gunController.bullet, gunController.firePoint.position, gunController.firePoint.rotation) as BulletController;
             newBullet.speed = bulletSpeed;
             amountOfBullets--;
+
+            newBullet.transform.parent = gunController.BulletsBeingShot.transform;
         }
         else
         {

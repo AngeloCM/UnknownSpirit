@@ -13,6 +13,7 @@ TagManager:
   - MachineGun
   - Spawner
   - ShotGun
+  - Spawn
   layers:
   - Default
   - TransparentFX

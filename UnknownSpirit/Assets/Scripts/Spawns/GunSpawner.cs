@@ -37,7 +37,7 @@ public class GunSpawner : MonoBehaviour
 
     GameObject RandomGun()
     {
-        int gun = Random.Range(1, 3);
+        int gun = Random.Range(1, 4);
 
         if (gun == 1)
         {
@@ -47,10 +47,12 @@ public class GunSpawner : MonoBehaviour
         {
             return MachineGun;
         }
-        else
+        else if(gun == 3)
         {
             return ShotGun;
         }
+
+        return null;
     }
 
     void SpawnGun()

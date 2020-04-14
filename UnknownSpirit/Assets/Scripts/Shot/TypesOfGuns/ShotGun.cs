@@ -16,7 +16,7 @@ namespace Assets.Scripts.Shot.TypesOfGuns
             gunController = gController;
             bulletSpeed = 15f;
             timeBetweenShots = 0.3f;
-            amountOfBullets = 300;
+            amountOfBullets = 10;
         }
 
         public override void Update()
@@ -52,6 +52,10 @@ namespace Assets.Scripts.Shot.TypesOfGuns
                 newBullet3.speed = bulletSpeed;
 
                 amountOfBullets -= 3;
+
+                newBullet.transform.parent = gunController.BulletsBeingShot.transform;
+                newBullet2.transform.parent = gunController.BulletsBeingShot.transform;
+                newBullet3.transform.parent = gunController.BulletsBeingShot.transform;
             }
             else
             {

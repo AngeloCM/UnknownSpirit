@@ -19,6 +19,9 @@ namespace Assets.Scripts.AI.EnemyCode
         [SerializeField, Tooltip("The time to wait in Idle State")]
         public int Health = 10;
 
+        [SerializeField, Tooltip("The damage to the Player")]
+        public int Damage = 5;
+
         [SerializeField, Tooltip("The time to wait in Idle State")]
         public float totalDurationIdle = 2f;
 
@@ -61,6 +64,34 @@ namespace Assets.Scripts.AI.EnemyCode
                     Destroy(this.gameObject);
                 }
             }
+            
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                PushBackEnemy();
+                PlayerReference.GetComponent<Player>().Health -= Damage;
+            }
+            else
+            {
+                StopAddingForce();
+            }
+        }
+
+        private void StopAddingForce()
+        {
+            Rigidbody rb = GetComponent<Rigidbody>();
+
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
+
+        void PushBackEnemy()
+        {
+            Rigidbody rb = GetComponent<Rigidbody>();
+            rb.AddForce(-transform.forward * 10000f * Time.deltaTime);
         }
     }
 }

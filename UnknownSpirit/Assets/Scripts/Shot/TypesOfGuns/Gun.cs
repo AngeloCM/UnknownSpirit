@@ -9,22 +9,15 @@ namespace Assets.Scripts.Shot.TypesOfGuns
 {
     public abstract class Gun : ScriptableObject, IShotable
     {
-        public GunController gunController;
-
-        public BulletController bullet;
-
-        public float bulletSpeed;
-
-        public float timeBetweenShots;
-
-        public int amountOfBullets;
-
-        protected float shotCounter;
-
         public Transform firePoint;
-
+        public GunController gunController;
+        public BulletController bullet;
+        public float bulletSpeed;
+        public float timeBetweenShots;
+        public int amountOfBullets;
+        protected float shotCounter;
+        
         public abstract void Shoot();
-
         public abstract void Update();
     }
 }
