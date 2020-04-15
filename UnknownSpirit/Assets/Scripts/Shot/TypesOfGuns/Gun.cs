@@ -15,6 +15,7 @@ namespace Assets.Scripts.Shot.TypesOfGuns
         public float bulletSpeed;
         public float timeBetweenShots;
         public int amountOfBullets;
+        public int Damage;
         protected float shotCounter;
         
         public abstract void Shoot();

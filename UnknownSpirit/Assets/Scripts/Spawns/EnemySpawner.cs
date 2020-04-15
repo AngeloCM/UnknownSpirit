@@ -11,9 +11,11 @@ public class EnemySpawner : MonoBehaviour
     public float Timer = 300f;
 
     [SerializeField]
-    public float timeToSpawn = 5f;
+    public float TimeToSpawn;
 
     GameObject[] allSpawners;
+
+    float CountToSpawn;
 
     public void Awake()
     {
@@ -23,15 +25,15 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeToSpawn -= Time.deltaTime;
+        CountToSpawn -= Time.deltaTime;
         Timer -= Time.deltaTime;
 
         if (Timer > 0f)
         {
-            if (timeToSpawn < 0)
+            if (CountToSpawn < 0)
             {
                 SpawnEnemy();
-                timeToSpawn = 8f;
+                CountToSpawn = TimeToSpawn;
             }
         }
         

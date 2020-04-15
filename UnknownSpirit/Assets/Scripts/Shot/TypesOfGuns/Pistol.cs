@@ -11,7 +11,8 @@ public class Pistol : Gun
         gunController = gController;
         bulletSpeed = 15f;
         timeBetweenShots = 0.5f;
-        amountOfBullets = 15;
+        amountOfBullets = 20;
+        Damage = 5;
     }
 
     public override void Update()

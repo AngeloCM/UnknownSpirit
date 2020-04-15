@@ -126,9 +126,10 @@ MonoBehaviour:
   _navMeshAgent: {fileID: 0}
   PlayerReference: {fileID: 0}
   Health: 10
+  Damage: 5
   totalDurationIdle: 0.5
   DistanceToNextDestination: 1
-  DistanceToAttackPlayer: 20
+  DistanceToAttackPlayer: 25
   DistanceToExplode: 1.5
 --- !u!195 &3082529373889133409
 NavMeshAgent:

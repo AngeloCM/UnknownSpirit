@@ -16,6 +16,8 @@ namespace Assets.Scripts.AI.EnemyCode
 
         public GameObject PlayerReference;
 
+        int GunDamage;
+
         [SerializeField, Tooltip("The time to wait in Idle State")]
         public int Health = 10;
 
@@ -43,21 +45,26 @@ namespace Assets.Scripts.AI.EnemyCode
         void Start()
         {
             PlayerReference = GameObject.FindGameObjectWithTag("Player");
+            
         }
 
         void Update()
         {
+
             PlayerReference.transform.position = PlayerReference.transform.position;
             _finiteStateMachine.Update();
+
         }
 
         private void OnTriggerEnter(Collider other)
         {
+            GunDamage = PlayerReference.GetComponent<PlayerController>()._gunController._currentGun.Damage;
+
             if (other.gameObject.CompareTag("Bullet"))
             {
                 if (Health > 0)
                 {
-                    Health--;
+                    Health -= GunDamage;
                 }
                 else
                 {

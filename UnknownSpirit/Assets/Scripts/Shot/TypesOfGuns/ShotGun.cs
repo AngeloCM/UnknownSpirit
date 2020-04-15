@@ -9,14 +9,15 @@ namespace Assets.Scripts.Shot.TypesOfGuns
 {
     class ShotGun : Gun
     {
-        float shotsAngle = 15f;
+        float shotsAngle = 25f;
 
         public ShotGun(GunController gController)
         {
             gunController = gController;
             bulletSpeed = 15f;
             timeBetweenShots = 0.3f;
-            amountOfBullets = 10;
+            amountOfBullets = 15;
+            Damage = 10;
         }
 
         public override void Update()

@@ -2,13 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
     [SerializeField]
     public int Health = 5;
 
-    bool isDead = false;
+    public bool isDead = false;
 
     // Start is called before the first frame update
     void Start()
@@ -26,8 +27,7 @@ public class Player : MonoBehaviour
     }
 
     void GameOver()
-    {
-        Destroy(this.gameObject);
+    {        
         isDead = true;
     }
 }

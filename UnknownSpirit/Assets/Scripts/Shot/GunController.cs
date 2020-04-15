@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GunController : MonoBehaviour
 {
-    Gun _currentGun;
+    public Gun _currentGun;
     public GameObject BulletsBeingShot;
     public BulletController bullet;
     public Transform firePoint;
