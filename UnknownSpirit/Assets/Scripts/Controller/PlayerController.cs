@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     public float speed = 6.0f;
 
+    float shotTimer;
+
     // Start is called before the first frame update
     void Start()
     {

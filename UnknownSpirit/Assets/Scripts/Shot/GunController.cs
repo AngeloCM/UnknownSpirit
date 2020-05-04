@@ -44,4 +44,9 @@ public class GunController : MonoBehaviour
     {
         _currentGun = new Pistol(this);
     }
+
+    public void setRocketLauncer()
+    {
+        _currentGun = new RocketLauncher(this);
+    }
 }

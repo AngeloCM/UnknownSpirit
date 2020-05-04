@@ -78,16 +78,19 @@
     <Compile Include="Assets\Scripts\Observer\Observer.cs" />
     <Compile Include="Assets\Scripts\Observer\Subject.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
+    <Compile Include="Assets\Scripts\Score\ScoreManager.cs" />
     <Compile Include="Assets\Scripts\Shot\BulletController.cs" />
     <Compile Include="Assets\Scripts\Shot\GunController.cs" />
     <Compile Include="Assets\Scripts\Shot\TypesOfGuns\Gun.cs" />
     <Compile Include="Assets\Scripts\Shot\TypesOfGuns\IShotable.cs" />
     <Compile Include="Assets\Scripts\Shot\TypesOfGuns\MachineGun.cs" />
     <Compile Include="Assets\Scripts\Shot\TypesOfGuns\Pistol.cs" />
+    <Compile Include="Assets\Scripts\Shot\TypesOfGuns\RocketLauncher.cs" />
     <Compile Include="Assets\Scripts\Shot\TypesOfGuns\ShotGun.cs" />
     <Compile Include="Assets\Scripts\Spawns\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\Spawns\GunSpawner.cs" />
     <Compile Include="Assets\Scripts\UI\Interface.cs" />
+    <None Include="Assets\ScoreData\Scores.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Angelo/Desktop/ProjectGP2/UnknownSpirit/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

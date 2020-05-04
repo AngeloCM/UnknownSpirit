@@ -1,0 +1,15 @@
+Game : Unknown Spirit
+Programmer: Angelo Casagrande de Mello
+
+Game Patterns Used: - Strategy Pattern
+		    - Observer Pattern
+
+Things Done:
+	- Strategy pattern works fine.
+	- I have 1 abstract class , which contains other 3 classes implementing some functions.
+	- I have an AI working perfectly, but still have some bugs.
+
+Things to be Done:
+	- Observer still does not work.
+	- Implement a better design for the game.
+	- Polish the UI. 

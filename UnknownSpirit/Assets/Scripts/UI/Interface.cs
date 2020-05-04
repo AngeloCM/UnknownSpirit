@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,17 +13,31 @@ public class Interface : MonoBehaviour
     public Text WinLose;
     public Text timer;
     public Text Health;
+    public Text Ammo;
+    public Text First;
+    public Text Second;
+    public Text Third;
+
     public Button Restart;
     public Button Menu;
 
-    float timeReference;
+    ScoreManager scores;
+
+    float time;
     int PlayerHealth;
+    int PlayerAmmo;
+    string GunType;
     bool isPlayerDead;
+    bool IsAdded;
+
+    private void Awake()
+    {
+        scores = new ScoreManager();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        timeReference = SpawnerReference.GetComponent<EnemySpawner>().Timer;
         PlayerHealth = PlayerReference.GetComponent<Player>().Health;
         isPlayerDead = PlayerReference.GetComponent<Player>().isDead;
 
@@ -32,6 +47,12 @@ public class Interface : MonoBehaviour
 
         Health.text = "Health";
         Health.color = Color.red;
+
+        Ammo.text = "Ammo";
+        Ammo.color = Color.blue;
+
+        
+        IsAdded = false;
     }
 
     // Update is called once per frame
@@ -41,21 +62,16 @@ public class Interface : MonoBehaviour
         {
             SetButton();
             PlayerReference.GetComponent<PlayerController>().enabled = false;
-            SetWinLoseState("You Lost", Color.red);
-            
-        }
-        else if (timeReference < 0)
-        {
-            SetButton();
-            PlayerReference.GetComponent<PlayerController>().enabled = false;
-            SetWinLoseState("You Won", Color.green);
+            showHighScore();
+            SetWinLoseState("High Scores", Color.yellow);
         }
         else
         {
-            timeReference -= Time.deltaTime;
+            time += Time.deltaTime;
             UpdateTime();
             UpdateHealth();
             UpdatePlayerStatus();
+            UpdateAmmo();
         }
     }
 
@@ -74,7 +90,7 @@ public class Interface : MonoBehaviour
 
     private void UpdateTime()
     {
-        timer.text = "Timer : " + (int)timeReference;
+        timer.text = "Timer : " + (int)time;
     }
 
     void UpdateHealth()
@@ -82,9 +98,44 @@ public class Interface : MonoBehaviour
         PlayerHealth = PlayerReference.GetComponent<Player>().Health;
         Health.text = "Health : " + PlayerHealth;
     }
-    
+
+    void UpdateAmmo()
+    {
+        PlayerAmmo = PlayerReference.GetComponent<PlayerController>()._gunController._currentGun.amountOfBullets;
+        GunType = PlayerReference.GetComponent<PlayerController>()._gunController._currentGun.GetType().Name;
+
+        Ammo.text = $"{GunType} Ammo : " + PlayerAmmo;
+    }
+
     void UpdatePlayerStatus()
     {
         isPlayerDead = PlayerReference.GetComponent<Player>().isDead;
+    }
+
+    void showHighScore()
+    {
+        if (!IsAdded)
+        {
+            scores.AddScoreToList(time);
+            IsAdded = true;
+        }
+
+        First.color = Color.yellow;
+        Second.color = Color.yellow;
+        Third.color = Color.yellow;
+
+        int LastElement = scores.HighScores.Count;
+
+        
+
+
+        First.text = "First Place: " + scores.HighScores.ElementAt(LastElement - 1);
+        First.gameObject.SetActive(true);
+
+        Second.text = "Second Place: " + scores.HighScores.ElementAt(LastElement - 2);
+        Second.gameObject.SetActive(true);
+
+        Third.text = "Third Place: " + scores.HighScores.ElementAt(LastElement - 3);
+        Third.gameObject.SetActive(true);
     }
 }
