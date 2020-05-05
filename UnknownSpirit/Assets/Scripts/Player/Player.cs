@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    public int Health = 5;
+    public int Health = 10;
 
     public bool isDead = false;
 

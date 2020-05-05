@@ -10,7 +10,7 @@ public class Interface : MonoBehaviour
     public GameObject SpawnerReference;
     public GameObject PlayerReference;
 
-    public Text WinLose;
+    public Text HighScore;
     public Text timer;
     public Text Health;
     public Text Ammo;
@@ -63,7 +63,7 @@ public class Interface : MonoBehaviour
             SetButton();
             PlayerReference.GetComponent<PlayerController>().enabled = false;
             showHighScore();
-            SetWinLoseState("High Scores", Color.yellow);
+            ShowHighScore("High Scores", Color.yellow);
         }
         else
         {
@@ -75,11 +75,11 @@ public class Interface : MonoBehaviour
         }
     }
 
-    private void SetWinLoseState(string text, Color color)
+    private void ShowHighScore(string text, Color color)
     {
-        WinLose.gameObject.SetActive(true);
-        WinLose.text = text;
-        WinLose.color = color;
+        HighScore.gameObject.SetActive(true);
+        HighScore.text = text;
+        HighScore.color = color;
     }
 
     private void SetButton()
@@ -129,13 +129,13 @@ public class Interface : MonoBehaviour
         
 
 
-        First.text = "First Place: " + scores.HighScores.ElementAt(LastElement - 1);
+        First.text = "First Place: " + scores.HighScores.ElementAt(LastElement - 1).ToString("n2") + "s";
         First.gameObject.SetActive(true);
 
-        Second.text = "Second Place: " + scores.HighScores.ElementAt(LastElement - 2);
+        Second.text = "Second Place: " + scores.HighScores.ElementAt(LastElement - 2).ToString("n2") + "s";
         Second.gameObject.SetActive(true);
 
-        Third.text = "Third Place: " + scores.HighScores.ElementAt(LastElement - 3);
+        Third.text = "Third Place: " + scores.HighScores.ElementAt(LastElement - 3).ToString("n2") + "s";
         Third.gameObject.SetActive(true);
     }
 }

@@ -16,7 +16,7 @@ namespace Assets.Scripts.Shot.TypesOfGuns
             gunController = gController;
             bulletSpeed = 15f;
             timeBetweenShots = 0.3f;
-            amountOfBullets = 15;
+            amountOfBullets = 20;
             Damage = 10;
         }
 
@@ -52,7 +52,7 @@ namespace Assets.Scripts.Shot.TypesOfGuns
                 newBullet3.gameObject.transform.Rotate(new Vector3(0, -shotsAngle, 0));
                 newBullet3.speed = bulletSpeed;
 
-                amountOfBullets -= 3;
+                amountOfBullets -= 1;
 
                 newBullet.transform.parent = gunController.BulletsBeingShot.transform;
                 newBullet2.transform.parent = gunController.BulletsBeingShot.transform;

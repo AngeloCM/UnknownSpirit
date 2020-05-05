@@ -22,7 +22,7 @@ namespace Assets.Scripts.AI.EnemyCode
         public int Health = 10;
 
         [SerializeField, Tooltip("The damage to the Player")]
-        public int Damage = 5;
+        public int Damage = 10;
 
         [SerializeField, Tooltip("The time to wait in Idle State")]
         public float totalDurationIdle = 2f;

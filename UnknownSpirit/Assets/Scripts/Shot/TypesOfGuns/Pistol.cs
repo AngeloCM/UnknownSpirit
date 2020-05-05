@@ -11,7 +11,7 @@ public class Pistol : Gun
         gunController = gController;
         bulletSpeed = 15f;
         timeBetweenShots = 0.5f;
-        amountOfBullets = 20;
+        amountOfBullets = 30;
         Damage = 5;
     }
 
