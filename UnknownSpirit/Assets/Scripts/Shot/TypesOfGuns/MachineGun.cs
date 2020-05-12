@@ -34,16 +34,15 @@ public class MachineGun : Gun
 
     public override void Shoot()
     {
-        
-
         if (amountOfBullets > 0)
         {
 
-            BulletController newBullet = Instantiate(gunController.bullet, gunController.firePoint.position, gunController.firePoint.rotation) as BulletController;
-            newBullet.speed = bulletSpeed;
+            BulletController newBullet4 = Instantiate(gunController.bullet, gunController.firePoint.position, gunController.firePoint.rotation) as BulletController;
+            newBullet4.speed = bulletSpeed;
+            newBullet4.GetComponent<Renderer>().material.color = new Color(0, 255, 0, 255);
             amountOfBullets--;
 
-            newBullet.transform.parent = gunController.BulletsBeingShot.transform;
+            newBullet4.transform.parent = gunController.BulletsBeingShot.transform;
         }
         else
         {

@@ -17,6 +17,8 @@ public class Interface : MonoBehaviour
     public Text First;
     public Text Second;
     public Text Third;
+    public Text YourTime;
+    public Texture2D cursorShot;
 
     public Button Restart;
     public Button Menu;
@@ -49,9 +51,10 @@ public class Interface : MonoBehaviour
         Health.color = Color.red;
 
         Ammo.text = "Ammo";
-        Ammo.color = Color.blue;
+        Ammo.color = Color.red;
 
-        
+        Cursor.SetCursor(cursorShot, Vector2.zero, CursorMode.ForceSoftware);
+
         IsAdded = false;
     }
 
@@ -90,7 +93,7 @@ public class Interface : MonoBehaviour
 
     private void UpdateTime()
     {
-        timer.text = "Timer : " + (int)time;
+        timer.text = "Timer : " + (int)time + "s";
     }
 
     void UpdateHealth()
@@ -123,11 +126,9 @@ public class Interface : MonoBehaviour
         First.color = Color.yellow;
         Second.color = Color.yellow;
         Third.color = Color.yellow;
+        YourTime.color = Color.green;
 
         int LastElement = scores.HighScores.Count;
-
-        
-
 
         First.text = "First Place: " + scores.HighScores.ElementAt(LastElement - 1).ToString("n2") + "s";
         First.gameObject.SetActive(true);
@@ -137,5 +138,8 @@ public class Interface : MonoBehaviour
 
         Third.text = "Third Place: " + scores.HighScores.ElementAt(LastElement - 3).ToString("n2") + "s";
         Third.gameObject.SetActive(true);
+
+        YourTime.text = "Your Time: " + (int)time + "s";
+        YourTime.gameObject.SetActive(true);
     }
 }

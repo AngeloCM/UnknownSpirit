@@ -89,6 +89,8 @@
     <Compile Include="Assets\Scripts\Shot\TypesOfGuns\ShotGun.cs" />
     <Compile Include="Assets\Scripts\Spawns\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\Spawns\GunSpawner.cs" />
+    <Compile Include="Assets\Scripts\Spawns\PreFabSpawner.cs" />
+    <Compile Include="Assets\Scripts\Spawns\Slot.cs" />
     <Compile Include="Assets\Scripts\UI\Interface.cs" />
     <None Include="Assets\ScoreData\Scores.txt" />
     <Reference Include="Unity.Timeline.Editor">

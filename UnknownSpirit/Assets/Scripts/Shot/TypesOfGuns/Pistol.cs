@@ -38,6 +38,7 @@ public class Pistol : Gun
         {
             BulletController newBullet = Instantiate(gunController.bullet, gunController.firePoint.position, gunController.firePoint.rotation) as BulletController;
             newBullet.speed = bulletSpeed;
+            newBullet.GetComponent<Renderer>().material.color = new Color(255, 0, 201, 255);
             amountOfBullets--;
 
             newBullet.transform.parent = gunController.BulletsBeingShot.transform;

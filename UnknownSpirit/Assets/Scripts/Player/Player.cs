@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Health < 0)
+        if (Health <= 0)
         {
             GameOver();
         }

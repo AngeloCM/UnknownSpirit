@@ -34,4 +34,9 @@ public class GameController : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
     }
+
+    public void LoadInstructionScene()
+    {
+        SceneManager.LoadScene("Instructions");
+    }
 }

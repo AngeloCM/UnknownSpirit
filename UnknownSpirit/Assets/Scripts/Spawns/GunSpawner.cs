@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Spawns;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,24 +15,31 @@ public class GunSpawner : MonoBehaviour
     public GameObject ShotGun;
 
     [SerializeField]
-    float timeToSpawn = 10f;
+    float timeToSpawn;
 
-    GameObject[] allSpawners;
+    float timer;
+
+    GameObject[] arrayOfSpawners;
 
     public void Awake()
     {
-        allSpawners = GameObject.FindGameObjectsWithTag("Spawner");
+        arrayOfSpawners = GameObject.FindGameObjectsWithTag("Spawner");
+    }
+
+    private void Start()
+    {
+        timer = timeToSpawn;
     }
 
     // Update is called once per frame
     void Update()
     {
-        timeToSpawn -= Time.deltaTime;
+        timer -= Time.deltaTime;
 
-        if (timeToSpawn < 0)
+        if (timer < 0)
         {
             SpawnGun();
-            timeToSpawn = 8f;
+            timer = timeToSpawn;
         }
     }
 
@@ -58,7 +66,21 @@ public class GunSpawner : MonoBehaviour
     void SpawnGun()
     {
         GameObject gunToSpawn = RandomGun();
+        int spawnPoint = Random.Range(0, arrayOfSpawners.Length);
 
-        Instantiate(gunToSpawn, allSpawners[Random.Range(0, allSpawners.Length)].transform.position, Quaternion.identity);
+        if (arrayOfSpawners[spawnPoint].GetComponent<Slot>().empty)
+        {
+            arrayOfSpawners[spawnPoint].GetComponent<Slot>().slotPowerUp = gunToSpawn;
+            arrayOfSpawners[spawnPoint].GetComponent<Slot>().empty = false;
+            arrayOfSpawners[spawnPoint].GetComponent<Slot>().slotPowerUp.GetComponent<PreFabSpawner>().SpawnerIndex = spawnPoint;
+            Instantiate(gunToSpawn, arrayOfSpawners[spawnPoint].transform.position, Quaternion.identity);
+            gunToSpawn.GetComponent<PreFabSpawner>().SpawnerIndex = spawnPoint;
+        }
+    }
+
+    public void deletePowerUp(GameObject powerUp)
+    {
+        arrayOfSpawners[powerUp.GetComponent<PreFabSpawner>().SpawnerIndex].GetComponent<Slot>().slotPowerUp = null;
+        arrayOfSpawners[powerUp.GetComponent<PreFabSpawner>().SpawnerIndex].GetComponent<Slot>().empty = true;
     }
 }

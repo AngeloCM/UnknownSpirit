@@ -15,7 +15,7 @@ namespace Assets.Scripts.Shot.TypesOfGuns
         {
             gunController = gController;
             bulletSpeed = 15f;
-            timeBetweenShots = 0.3f;
+            timeBetweenShots = 1f;
             amountOfBullets = 20;
             Damage = 10;
         }
@@ -43,14 +43,17 @@ namespace Assets.Scripts.Shot.TypesOfGuns
             {
                 BulletController newBullet = Instantiate(gunController.bullet, gunController.firePoint.position, gunController.firePoint.rotation) as BulletController;
                 newBullet.speed = bulletSpeed;
+                newBullet.GetComponent<Renderer>().material.color = new Color(255, 255, 0, 255);
 
                 BulletController newBullet2 = Instantiate(gunController.bullet, gunController.firePoint.position, gunController.firePoint.rotation) as BulletController;
                 newBullet2.gameObject.transform.Rotate(new Vector3(0, shotsAngle, 0));
                 newBullet2.speed = bulletSpeed;
+                newBullet2.GetComponent<Renderer>().material.color = new Color(255, 255, 0, 255);
 
                 BulletController newBullet3 = Instantiate(gunController.bullet, gunController.firePoint.position, gunController.firePoint.rotation) as BulletController;
                 newBullet3.gameObject.transform.Rotate(new Vector3(0, -shotsAngle, 0));
                 newBullet3.speed = bulletSpeed;
+                newBullet3.GetComponent<Renderer>().material.color = new Color(255, 255, 0, 255);
 
                 amountOfBullets -= 1;
 
