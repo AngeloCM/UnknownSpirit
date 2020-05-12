@@ -125,7 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _navMeshAgent: {fileID: 0}
   PlayerReference: {fileID: 0}
-  Health: 10
+  Health: 15
   Damage: 5
   totalDurationIdle: 0.5
   DistanceToNextDestination: 1

@@ -19,7 +19,7 @@ namespace Assets.Scripts.AI.EnemyCode
         int GunDamage;
 
         [SerializeField, Tooltip("The time to wait in Idle State")]
-        public int Health = 10;
+        public int Health = 20;
 
         [SerializeField, Tooltip("The damage to the Player")]
         public int Damage = 10;
