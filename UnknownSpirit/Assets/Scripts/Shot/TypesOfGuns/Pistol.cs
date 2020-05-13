@@ -10,16 +10,18 @@ public class Pistol : Gun
     {
         gunController = gController;
         bulletSpeed = 15f;
-        timeBetweenShots = 0.5f;
+        timeBetweenShots = 0.3f;
         amountOfBullets = 30;
         Damage = 5;
     }
 
     public override void Update()
     {
+        shotCounter -= Time.deltaTime;
+
         if (gunController.isFiring)
         {
-            shotCounter -= Time.deltaTime;
+            
             if (shotCounter <= 0)
             {
                 shotCounter = timeBetweenShots;

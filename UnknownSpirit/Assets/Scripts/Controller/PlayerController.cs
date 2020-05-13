@@ -42,10 +42,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        shotTimer += Time.deltaTime;
+
+        if (Input.GetMouseButtonDown(0) && shotTimer > _gunController._currentGun.timeBetweenShots)
         {
             _gunController.isFiring = true;
             state = PlayerState.SHOOT;
+            shotTimer = 0;
         }
         if (Input.GetMouseButtonUp(0))
         {

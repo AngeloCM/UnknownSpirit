@@ -15,7 +15,7 @@ namespace Assets.Scripts.Shot.TypesOfGuns
         {
             gunController = gController;
             bulletSpeed = 15f;
-            timeBetweenShots = 1f;
+            timeBetweenShots = 0.5f;
             amountOfBullets = 20;
             Damage = 10;
         }

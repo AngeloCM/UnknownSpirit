@@ -233,7 +233,7 @@ MonoBehaviour:
   MachineGun: {fileID: 8166935777127985116, guid: 2cbdd5ec40761a740b962a9d2c4a488b,
     type: 3}
   ShotGun: {fileID: 4751211153397118552, guid: 177867acd377eac489eefcd436bcfe83, type: 3}
-  timeToSpawn: 8
+  timeToSpawn: 6
 --- !u!114 &555825409571374265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,7 +249,7 @@ MonoBehaviour:
   EnemyPrefeb: {fileID: 3082529373889133416, guid: adf0ffd3437df0240bb6a7c8c7473a39,
     type: 3}
   Timer: 600
-  TimeToSpawn: 2
+  TimeToSpawn: 2.5
 --- !u!1 &555825409683185013
 GameObject:
   m_ObjectHideFlags: 0

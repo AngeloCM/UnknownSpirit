@@ -92,7 +92,7 @@
     <Compile Include="Assets\Scripts\Spawns\PreFabSpawner.cs" />
     <Compile Include="Assets\Scripts\Spawns\Slot.cs" />
     <Compile Include="Assets\Scripts\UI\Interface.cs" />
-    <None Include="Assets\ScoreData\Scores.txt" />
+    <None Include="Assets\Resources\ScoreData\Scores.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Angelo/Desktop/ProjectGP2/UnknownSpirit/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

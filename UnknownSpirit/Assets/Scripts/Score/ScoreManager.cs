@@ -5,11 +5,11 @@ using System.IO;
 using System.Linq;
 using UnityEngine;
 
-public class ScoreManager
+public class ScoreManager : MonoBehaviour
 {
     public List<float> HighScores;
 
-    string path = @"Assets\ScoreData\Scores.txt";
+    string path = @"Assets/Resources/ScoreData/Scores.txt";
 
     public ScoreManager()
     {

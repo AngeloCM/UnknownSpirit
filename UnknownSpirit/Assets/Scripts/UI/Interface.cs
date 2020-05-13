@@ -65,7 +65,7 @@ public class Interface : MonoBehaviour
         {
             SetButton();
             PlayerReference.GetComponent<PlayerController>().enabled = false;
-            showHighScore();
+            showHighScoreList();
             ShowHighScore("High Scores", Color.yellow);
         }
         else
@@ -76,13 +76,6 @@ public class Interface : MonoBehaviour
             UpdatePlayerStatus();
             UpdateAmmo();
         }
-    }
-
-    private void ShowHighScore(string text, Color color)
-    {
-        HighScore.gameObject.SetActive(true);
-        HighScore.text = text;
-        HighScore.color = color;
     }
 
     private void SetButton()
@@ -115,7 +108,14 @@ public class Interface : MonoBehaviour
         isPlayerDead = PlayerReference.GetComponent<Player>().isDead;
     }
 
-    void showHighScore()
+    private void ShowHighScore(string text, Color color)
+    {
+        HighScore.gameObject.SetActive(true);
+        HighScore.text = text;
+        HighScore.color = color;
+    }
+
+    void showHighScoreList()
     {
         if (!IsAdded)
         {
