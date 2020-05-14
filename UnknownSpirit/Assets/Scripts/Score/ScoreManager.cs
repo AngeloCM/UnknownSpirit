@@ -9,6 +9,8 @@ public class ScoreManager : MonoBehaviour
 {
     public List<float> HighScores;
 
+    string textFile = Resources.Load<TextAsset>("ScoreData/Scores").ToString();
+
     string path = @"Assets/Resources/ScoreData/Scores.txt";
 
     public ScoreManager()
